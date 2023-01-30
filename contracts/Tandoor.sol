@@ -16,7 +16,7 @@ contract Tandoor {
 
     Problem[] public problems;
 
-    function setProblem(uint256[] _inputs, uint256[] _outputs) public {
+    function setProblem(uint256[] memory _inputs, uint256[] memory _outputs) public {
         problems.push(Problem(problems.length, _inputs, _outputs));
     }
 }
