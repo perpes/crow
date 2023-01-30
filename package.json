@@ -1,0 +1,37 @@
+{
+  "name": "tandoor",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/5r33n/tandoor.git"
+  },
+  "author": "5r33n",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/5r33n/tandoor/issues"
+  },
+  "homepage": "https://github.com/5r33n/tandoor#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.1",
+    "@nomiclabs/hardhat-etherscan": "^3.1.5",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "chai": "^4.3.7",
+    "ethereum-waffle": "^3.4.4",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.12.6",
+    "hardhat-deploy": "^0.11.22",
+    "hardhat-deploy-ethers": "^0.3.0-beta.13",
+    "hardhat-gas-reporter": "^1.0.9",
+    "prettier": "^2.8.3",
+    "prettier-plugin-solidity": "^1.1.1",
+    "solidity-coverage": "^0.8.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
