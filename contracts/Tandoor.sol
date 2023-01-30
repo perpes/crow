@@ -7,16 +7,16 @@
 
 pragma solidity ^0.8.17;
 
-import "hardhat/console.sol";
-
 contract Tandoor {
-    mapping(uint256 => uint256) public inputToOutput;
-
-    function setIO(uint256 _input, uint256 _output) public {
-        inputToOutput[_input] = _output;
+    struct Problem {
+        uint256 id;
+        uint256[] inputs;
+        uint256[] outputs;
     }
 
-    function getOutput(uint256 _input) public view returns (uint256) {
-        return inputToOutput[_input];
+    Problem[] public problems;
+
+    function setProblem(uint256[] _inputs, uint256[] _outputs) public {
+        problems.push(Problem(problems.length, _inputs, _outputs));
     }
 }
