@@ -1,15 +1,17 @@
 // SPDX-License-Identifier: MIT
 
 /**
- * @title Tandoor
+ * @title Crow
  * @author Millie @5r33n
  */
 
 pragma solidity ^0.8.17;
 
-contract Tandoor {
+contract Crow {
     event ProblemEvent(uint256 indexed id, uint256 reward);
 
+    // `inputs` and `outputs` will be encrypted before production;
+    // their types will also get changed to bytes32[]
     struct Problem {
         uint256 id;
         uint256 reward;
@@ -31,5 +33,10 @@ contract Tandoor {
     function getProblem(uint256 _id) public view returns (uint256[] memory, uint256[] memory) {
         Problem storage problem = problems[_id];
         return (problem.inputs, problem.outputs);
+    }
+
+    function getProblemInputs(uint256 _id) public view returns (uint256[] memory) {
+        Problem storage problem = problems[_id];
+        return problem.inputs;
     }
 }

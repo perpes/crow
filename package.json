@@ -1,5 +1,5 @@
 {
-  "name": "tandoor",
+  "name": "crow",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/5r33n/tandoor.git"
+    "url": "git+https://github.com/perpes/crow.git"
   },
   "author": "5r33n",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/5r33n/tandoor/issues"
+    "url": "https://github.com/perpes/crow/issues"
   },
-  "homepage": "https://github.com/5r33n/tandoor#readme",
+  "homepage": "https://github.com/perpes/crow#readme",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.1",
     "@nomiclabs/hardhat-etherscan": "^3.1.5",
