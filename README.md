@@ -1,10 +1,10 @@
-# Tandoor
+# Crow
 
-Tandoor takes coding problems, lists of I/O pairs, rewards, and deadlines from the clients, and solutions from the coders. If the provided solution matches all items of the I/O lists correctly, the code gets revealed to the client, and the reward gets transferred to the coder. Otherwise, the success percentage will get returned to the coder, and in addition to that the indexes of failed items will get returned to the client.
+Crow takes coding problems, lists of I/O pairs, rewards, and deadlines from the clients, and solutions from the coders. If the provided solution matches all items of the I/O lists correctly, the code gets revealed to the client, and the reward gets transferred to the coder. Otherwise, the success percentage will get returned to the coder, and in addition to that the indexes of failed items will get returned to the client.
 
 ## Procedure
 
-Here is a procedural overview of how humans can interact with Tandoor and get results:
+Here is a procedural overview of how humans can interact with Crow and get results:
 
 1. Client provides the following:
 
@@ -16,7 +16,7 @@ Here is a procedural overview of how humans can interact with Tandoor and get re
 
     1.4. reward (ETH)
 
-2. Tandoor:
+2. Crow:
 
     2.1. stores deadline timestamp in the smart contract 
 
@@ -26,7 +26,7 @@ Here is a procedural overview of how humans can interact with Tandoor and get re
 
 3. Coder sends his/her solution code to a specific problem
 
-4. Tandoor compiles the code and checks if I/O pairs match
+4. Crow compiles the code and checks if I/O pairs match
 
     4.1. If all I/O pairs match:
 
