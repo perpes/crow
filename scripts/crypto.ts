@@ -19,8 +19,8 @@ const encrypt = (_pwd, _ioList) => {
   return encrypted
 }
 
-const decrypt = (_pwd, _ioList) => {
-  let decrypted = sjcl.json.decrypt("pwd", encrypted)
+const decrypt = (_pwd, _encrypted) => {
+  let decrypted = sjcl.json.decrypt("pwd", _encrypted)
   return decrypted
 }
 
