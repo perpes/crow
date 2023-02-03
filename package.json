@@ -32,6 +32,7 @@
     "solidity-coverage": "^0.8.2"
   },
   "dependencies": {
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "sjcl": "^1.0.8"
   }
 }
