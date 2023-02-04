@@ -8,35 +8,46 @@
 pragma solidity ^0.8.17;
 
 contract Crow {
-    event ProblemEvent(uint256 indexed id, uint256 reward);
+    event ProblemSet(uint256 indexed id, uint256 reward);
+    event ProblemSolved(uint256 indexed id);
 
-    // `inputs` and `outputs` will be encrypted before production;
-    // their types will also get changed to bytes32[]
+    address public owner;
+
     struct Problem {
         uint256 id;
         uint256 reward;
-        uint256[] inputs;
-        uint256[] outputs;
+        bytes cid;
+        address problemSetter;
+        bool solved;
     }
 
     Problem[] public problems;
 
-    function setProblem(
-        uint256 _reward,
-        uint256[] memory _inputs,
-        uint256[] memory _outputs
-    ) public {
-        problems.push(Problem(problems.length, _reward, _inputs, _outputs));
-        emit ProblemEvent(problems.length - 1, _reward);
+    constructor() {
+        owner = msg.sender;
     }
 
-    function getProblem(uint256 _id) public view returns (uint256[] memory, uint256[] memory) {
-        Problem storage problem = problems[_id];
-        return (problem.inputs, problem.outputs);
+    modifier onlyOwner() {
+        require(msg.sender == owner, "[ERR] Not Owner");
+        _;
     }
 
-    function getProblemInputs(uint256 _id) public view returns (uint256[] memory) {
+    function setProblem(uint256 _reward, bytes memory _cid) public {
+        problems.push(Problem(problems.length, _reward, _cid, msg.sender, false));
+        emit ProblemSet(problems.length - 1, _reward);
+    }
+
+    function getProblemCid(uint256 _id) public view returns (bytes memory) {
         Problem storage problem = problems[_id];
-        return problem.inputs;
+        return problem.cid;
+    }
+
+    function problemSolved(uint256 _problemId, address _coderAddress) public onlyOwner {
+        Problem storage problem = problems[_problemId];
+        uint256 reward = problem.reward;
+        (bool sent, ) = _coderAddress.call{value: reward}("");
+        require(sent, "[ERR] Failed to send Ether");
+        problem.solved = true;
+        emit ProblemSolved(_problemId);
     }
 }
