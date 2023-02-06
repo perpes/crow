@@ -1,10 +1,23 @@
-import * as IPFS from "ipfs-core"
+//import * as IPFS from "ipfs"
+import { create } from "ipfs-http-client"
 
-const ipfstry = async () => {
-  const ipfs = await IPFS.create()
-  const { cid } = await ipfs.add("fffffffffffffffffffffffffffffffff")
+const ipfsTry = async () => {
+  const client = create("http://localhost:5001")
+  const { cid } = await client.add("immilie")
   console.log(cid)
-  // QmXXY5ZxbtuYj6DnfApLiGstzPN7fvSyigrRee3hDWPCaf
 }
 
-ipfstry()
+//ipfsTry()
+
+const decoder = new TextDecoder()
+let data = ""
+const ipfsUp = async (_cid) => {
+  const client = create("http://localhost:5001")
+  for await (const chunk of client.cat(_cid)) {
+    data += decoder.decode(chunk)
+  }
+  console.log(data)
+  // return content
+}
+
+ipfsUp("QmQLCRtJ9FGEkvAbjDzGGvU4TjrcA9gvQUBymfuCgzFtu2")
