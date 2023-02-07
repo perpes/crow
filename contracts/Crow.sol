@@ -55,11 +55,10 @@ contract Crow {
         _;
     }
 
-    function setProblem(uint256 _reward, bytes memory _cid) public payable returns (uint256) {
+    function setProblem(uint256 _reward, bytes memory _cid) public payable {
         require(_reward == msg.value, "[ERR] Reward not equal to msg.value");
         problems.push(Problem(problems.length, _reward, _cid, msg.sender, false));
         emit ProblemSet(problems.length - 1, _reward);
-        return (problems.length - 1);
     }
 
     function getProblem(uint256 _id) public view returns (uint256, bytes memory, address, bool) {
