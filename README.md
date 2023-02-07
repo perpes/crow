@@ -10,6 +10,23 @@ Crow is a trustless autonomous escrow dApp for digitized problems set by problem
 
 **Stage 3 (`x.x.x`):** Crow generalizes escrowing physical/digital services and products, automating trustless interactions among humans. 
 
+## Run Scripts
+
+### `main.ts`
+
+This script runs a thorouh test on all scripts and how they behave with the smart contract. You will need to keep a Hardhat network and the IPFS daemon running in the background before running this script.
+
+```console
+foo@bar:~$ npx hardhat node
+foo@bar:~$ ipfs daemon
+foo@bar:~$ npx hardhat run scripts/main.ts --network localhost
+```
+### `Crow.test.ts`
+
+```console
+foo@bar:~$ npx hardhat test
+```
+
 ## Crow's Startup Stage (`0.0.x`): digital-only escrow
 
 The goal we will achieve at this stage is providing a platform for developers and customers of digitally verifiable actions. 
