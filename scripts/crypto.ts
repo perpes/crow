@@ -5,7 +5,7 @@ interface Io {
   output: number
 }
 
-const sampleIOList: Io = {
+const SAMPLE_IO: Io = {
   1: 2,
   2: 3,
   3: 4,
@@ -13,18 +13,18 @@ const sampleIOList: Io = {
   5: 6,
 }
 
-const encrypt = (_pwd, _ioList) => {
+const encrypt = (_pwd = "pwd", _ioList) => {
   const jsonedIoList = JSON.stringify(_ioList)
   let encrypted = sjcl.json.encrypt(_pwd, jsonedIoList)
   return encrypted
 }
 
-const decrypt = (_pwd, _encrypted) => {
-  let decrypted = sjcl.json.decrypt("pwd", _encrypted)
+const decrypt = (_pwd = "pwd", _encrypted) => {
+  let decrypted = sjcl.json.decrypt(_pwd, _encrypted)
   return decrypted
 }
 
 //const encrypted = encrypt("pwd", sampleIOList)
 //const decrypted = decrypt("pwd", encrypted)
 
-export { Io, encrypt, decrypt }
+export { Io, encrypt, decrypt, SAMPLE_IO }
