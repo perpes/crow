@@ -49,6 +49,10 @@ As in the early-stage, assuming Person A wants to have an application that follo
 - Web Development
 - Software Development
 
+### Competitions
+
+Our competition at this level will be websites like Gitcoin with the key difference that there won't be a necessity for problem setters to confirm and choose winners, bringing more confidence and motivation for the programmers.
+
 ## Crow's Growth Stage (`0.x.x`): digital & simple physical service escrow
 
 The goal of this stage is to introduce escrowing on simple physical actions that can be verified digitally.
